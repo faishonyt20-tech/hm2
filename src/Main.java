@@ -32,9 +32,12 @@ public class Main {
         // Задача 2: Расчет налога 13% для выплат
         int[] inputArray2 = {50000, 75000, 45000, 60000, 80000};
         double[] outputArray2 = new double[inputArray2.length];
+        int index2 = 0;
 
-        for (int i = 0; i < inputArray2.length; i++) {
-            outputArray2[i] = inputArray2[i] * 0.13;
+        // Используем цикл for-each
+        for (int payment : inputArray2) {
+            outputArray2[index2] = payment * 0.13;
+            index2++;
         }
 
         System.out.println("inputArray2: " + Arrays.toString(inputArray2));
@@ -45,9 +48,12 @@ public class Main {
         // Задача 3: Поиск бонусов выше 5000 ₽
         int[] inputArray3 = {3500, 6200, 4800, 7500, 5500};
         boolean[] outputArray3 = new boolean[inputArray3.length];
+        int index3 = 0;
 
-        for (int i = 0; i < inputArray3.length; i++) {
-            outputArray3[i] = inputArray3[i] > 5000;
+        // Используем цикл for-each
+        for (int bonus : inputArray3) {
+            outputArray3[index3] = bonus > 5000;
+            index3++;
         }
 
         System.out.println("inputArray3: " + Arrays.toString(inputArray3));
@@ -59,17 +65,20 @@ public class Main {
         int[] inputArray4 = {1500, -200, 300, 1200, 800}; // Один отрицательный баланс
         // int[] inputArray4 = {1500, 200, 300, 1200, 800}; // Все положительные балансы
 
-        boolean outputArray4 = true; // Предполагаем, что просрочек нет
+        boolean hasOverdue = false; // Предполагаем, что просрочек нет
 
         for (int balance : inputArray4) {
             if (balance < 0) {
-                outputArray4 = false;
+                hasOverdue = true;
                 break; // Прерываем проверку при первой просрочке
             }
         }
 
+        // Создаем outputArray как массив с одним значением
+        boolean[] outputArray4 = {!hasOverdue}; // true - просрочек нет, false - есть просрочки
+
         System.out.println("inputArray4: " + Arrays.toString(inputArray4));
-        System.out.println("outputArray4: " + outputArray4);
+        System.out.println("outputArray4: " + Arrays.toString(outputArray4));
         System.out.println("true - просрочек нет, false - есть просрочки");
 
         System.out.println("\n=== Задача 5 ===");
