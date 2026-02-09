@@ -14,26 +14,26 @@ public class Main {
 
         // Задача 2
         System.out.println("=== Задача 2:");
-        String osType2 = "iOS"; // Может быть "iOS" или "Android"
+        int osType = 0; // 0 - iOS, 1 - Android (числовое значение)
         int clientDeviceYear = 2015;
         String message;
-        if (clientDeviceYear < 2015) {
-            if (osType2.equals("iOS")) {
-                message = "Установите облегченную версию приложения для iOS по ссылке";
-            } else {
-                message = "Установите облегченную версию приложения для Android по ссылке";
-            }
+
+        if (clientDeviceYear < 2015 && osType == 0) {
+            message = "Установите облегченную версию приложения для iOS по ссылке";
+        } else if (clientDeviceYear < 2015 && osType == 1) {
+            message = "Установите облегченную версию приложения для Android по ссылке";
+        } else if (clientDeviceYear >= 2015 && osType == 0) {
+            message = "Установите приложение для iOS по ссылке";
+        } else if (clientDeviceYear >= 2015 && osType == 1) {
+            message = "Установите приложение для Android по ссылке";
         } else {
-            if (osType2.equals("iOS")) {
-                message = "Установите приложение для iOS по ссылке";
-            } else {
-                message = "Установите приложение для Android по ссылке";
-            }
+            message = "Некорректные данные ОС или года устройства";
         }
+
         System.out.println(message);
 
         // Задача 3
-        System.out.println("=== Задача 3:");
+        System.out.println("\n=== Задача 3:");
         int year = 2024;
         boolean isLeapYear = false;
         if (year > 1584) {
@@ -70,7 +70,7 @@ public class Main {
         }
 
         // Задача 5
-        System.out.println("=== Задача 5:");
+        System.out.println("\n=== Задача 5:");
         int monthNumber = 12;
         String season;
         switch (monthNumber) {
