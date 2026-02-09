@@ -11,7 +11,7 @@ public class Main {
         }
 
         System.out.println("\n=== Задание 2 ===");
-        // Задание 2:
+        // Задание 2 - Вариант 1 (do-while):
         System.out.println("Вариант 1 (do-while):");
         int distanceDoWhile = 0;
         int messageCount1 = 0;
@@ -27,7 +27,22 @@ public class Main {
 
         System.out.println("Всего сообщений: " + messageCount1);
 
-        // Задание 3:
+        // Задание 2 - Вариант 2 (for):
+        System.out.println("\nВариант 2 (for):");
+        int messageCount2 = 0;
+
+        for (int distanceFor = 0; distanceFor <= 42195; distanceFor += 500) {
+            int remainingDistance = 42195 - distanceFor;
+            if (remainingDistance > 0) {
+                System.out.println("Держитесь! Осталось " + remainingDistance + " метров");
+                messageCount2++;
+            }
+        }
+
+        System.out.println("Всего сообщений: " + messageCount2);
+
+        System.out.println("\n=== Задание 3 ===");
+        // Задание 3 - Вариант 1 (while):
         System.out.println("Вариант 1 (while):");
         int budgetWhile = 1000; // Бюджет в рублях
         int daysWhile = 0;
@@ -48,6 +63,26 @@ public class Main {
 
         System.out.println("На бюджет хватит на " + daysWhile + " дней");
 
+        // Задание 3 - Вариант 2 (for):
+        System.out.println("\nВариант 2 (for):");
+        int budgetFor = 1000; // Бюджет в рублях
+        int daysFor = 0;
+
+        for (int dayFor = 1; budgetFor >= 100; dayFor++) {
+            if (dayFor % 5 == 0) {
+                System.out.println("День " + dayFor + ": Бесплатный день!");
+                daysFor++;
+                continue;
+            }
+
+            budgetFor -= 100;
+            daysFor++;
+            System.out.println("День " + dayFor + ": Оплачено 100 ₽, осталось " + budgetFor + " ₽");
+        }
+
+        System.out.println("На бюджет хватит на " + daysFor + " дней");
+
+        System.out.println("\n=== Задание 4 ===");
         // Задание 4:
         int month = 0;
         double total = 0;
